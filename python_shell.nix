@@ -12,7 +12,7 @@ buildPythonPackage rec {
     src = ./.;
     format = "pyproject";
     checkInputs = [ pytestCheckHook ];
-    buildInputs = [pip];
+    # buildInputs = [pip];
     propagatedBuildInputs = [
         numpy
         scipy
