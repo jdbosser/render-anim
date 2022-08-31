@@ -1,4 +1,4 @@
-from example_name.module import add
+from anim.module import add
 
 
 def inc(x):
