@@ -16,12 +16,14 @@ class MWriter(AbstractMovieWriter):
         super().__init__(*args, **kwargs)
 
     def setup(self, fig, outfile, dpi = None):
+        if dpi is None:
+            dpi = fig.get_dpi()
         super().setup(fig, outfile, dpi = dpi)
         self.outfile
 
     def grab_frame(self, **savefig_kwargs):
         print("saving frame", self.frame_num)
-        self.fig.savefig(self.basename + "/" + self.format.format(self.frame_num) + ".png", **savefig_kwargs)
+        self.fig.savefig(self.basename + "/" + self.format.format(self.frame_num) + ".png", dpi = self.fig.get_dpi(), **savefig_kwargs)
         self.frame_num += 1
         
 
