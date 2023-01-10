@@ -1,4 +1,4 @@
-{lib, buildPythonPackage, pytestCheckHook, matplotlib, numpy, pip, setuptools, pythonOlder }:
+{lib, buildPythonPackage, pytestCheckHook, matplotlib, numpy, pip, scipy, setuptools, pythonOlder }:
 
 buildPythonPackage rec {
     pname = "render-anim";
@@ -8,7 +8,7 @@ buildPythonPackage rec {
     format = "pyproject";
     checkInputs = [ pytestCheckHook ];
     buildInputs = [pip setuptools]; 
-    propagatedBuildInputs  = [ numpy matplotlib ];
+    propagatedBuildInputs  = [ numpy matplotlib scipy];
     meta = with lib; {
     };
 }
